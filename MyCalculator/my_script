@@ -1,5 +1,5 @@
 #!/bin/bash
-#*/5 * * * * bash /home/ilya/bin/my_script > /home/ilya/Documents/bashGen/my_script.log
+#*/5 * * * * bash /home/ec2-user/git/MyCalculator/MyCalculator/my_script > /home/ec2-user/docs/my_script.log
 
 echo $[ 1 + $[ RANDOM % 1000]] >> /home/ec2-user/docs/input1.txt
 echo $[ 1 + $[ RANDOM % 1000]] >> /home/ec2-user/docs/input2.txt
