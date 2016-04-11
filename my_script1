@@ -1,9 +1,9 @@
 #!/bin/bash
-#*/2 * * * * bash /home/ec2-user/git/MyCalculator/MyCalculator/my_script > /home/ec2-user/docs/my_script.log
+#*/2 * * * * bash /home/ec2-user/git/MyCalculator/my_script1 > /home/ec2-user/docs/my_script1.log
 
 now=$(date +"%Y%m%d%H")
-target_A=/home/ilya/docs/source_current/input_A_$now.txt
-target_B=/home/ilya/docs/source_current/input_B_$now.txt
+target_A=/home/ec2-user/docs/source_current/input_A_$now.txt
+target_B=/home/ec2-user/docs/source_current/input_B_$now.txt
 
 echo $[ 1 + $[ RANDOM % 1000]] >> $target_A
 echo $[ 1 + $[ RANDOM % 1000]] >> $target_B

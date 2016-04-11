@@ -1,8 +1,8 @@
 #!/bin/bash
-#05 */1 * * * bash /home/ilya/bin/my_script2 >> /home/ilya/bin/my_script2.log
+#05 */2 * * * bash /home/ec2-user/git/MyCalculator/my_script2 > /home/ec2-user/docs/my_script2.log
 
 now=$(date +"%Y%m%d%H")
-target_file=/home/ilya/docs/source_current/input_C_$now.txt
+target_file=/home/ec2-user/docs/source_current/input_C_$now.txt
 
 echo $[ 1 + $[ RANDOM % 1000000]] >> $target_file
 
