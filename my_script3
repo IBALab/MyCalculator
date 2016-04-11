@@ -1,5 +1,5 @@
 #!/bin/bash
-#00 */1 * * * bash /home/ec2-user/git/MyCalculator/my_script3 > /home/ec2-user/docs/my_script3.log
+#59 */1 * * * bash /home/ec2-user/git/MyCalculator/my_script3 > /home/ec2-user/docs/my_script3.log
 
 now=$(date +"%Y%m%d%H")
 current_f=/home/ec2-user/docs/source_current/*.txt
