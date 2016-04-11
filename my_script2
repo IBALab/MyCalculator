@@ -1,0 +1,10 @@
+#!/bin/bash
+#05 */1 * * * bash /home/ilya/bin/my_script2 >> /home/ilya/bin/my_script2.log
+
+now=$(date +"%Y%m%d%H")
+target_file=/home/ilya/docs/source_current/input_C_$now.txt
+
+echo $[ 1 + $[ RANDOM % 1000000]] >> $target_file
+
+
+

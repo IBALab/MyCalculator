@@ -1,0 +1,8 @@
+#!/bin/bash
+#00 */1 * * * bash /home/ilya/bin/my_script3 > /home/ilya/bin/my_script3.log
+
+now=$(date +"%Y%m%d%H")
+current_f=/home/ilya/docs/source_current/*.txt
+arc_folder=/home/ilya/docs/source_archive/input_$now.tar.gz
+tar cvzf $arc_folder $current_f
+rm $current_f
