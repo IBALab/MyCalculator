@@ -3,7 +3,6 @@ package MyMath;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import org.junit.After;
 import org.junit.Before;
@@ -77,7 +76,6 @@ public class TestMyMath {
 	@Test
 	public void Mean() {
 		//1
-		//System.out.println("dd "+mm.Mean(allFilesList).intValue());
 		assertEquals(mm.Mean(allFilesList),new Integer(2));
 		
 		//2
