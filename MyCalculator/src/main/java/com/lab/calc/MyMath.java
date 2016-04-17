@@ -42,7 +42,7 @@ public class MyMath {
 		if (allValuesList.isEmpty())
 			return null;
 		else {
-			int tempmin = 0;
+			int tempmin = (int) Math.pow(2, 31);
 			for (int i = 0; i < allValuesList.size(); i++) {
 				int curr = allValuesList.get(i);
 				if (curr < tempmin)

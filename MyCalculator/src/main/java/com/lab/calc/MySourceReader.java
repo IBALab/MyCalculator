@@ -3,6 +3,7 @@ package com.lab.calc;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MySourceReader {
@@ -13,11 +14,12 @@ public class MySourceReader {
 		
 		File sourceDir = new File(sourceDirPath);
 		File[] listOfFiles = sourceDir.listFiles();
+		Arrays.sort(listOfFiles);
 		if (listOfFiles.length == 0)
 			return AllValuesList;
 		
 		for (int i = 0; i < listOfFiles.length; i++) {
-			File currentFile = listOfFiles[i];		  
+			File currentFile = listOfFiles[i];
 			if (currentFile.isFile() && currentFile.getName().endsWith(".txt")) {
 				Scanner scanner = new Scanner(currentFile);
 				while(scanner.hasNextInt())
@@ -25,7 +27,6 @@ public class MySourceReader {
 				scanner.close();
 			}
 		}
-
 		return AllValuesList;
 	}
 }

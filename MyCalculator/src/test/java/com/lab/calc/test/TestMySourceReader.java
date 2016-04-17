@@ -72,12 +72,12 @@ public class TestMySourceReader {
 	@Test
 	public void getAllValues () throws FileNotFoundException{
 		ArrayList<Integer> AllValuesList = new  ArrayList<Integer>();
-		AllValuesList.add(2);
-		AllValuesList.add(2);
-		AllValuesList.add(2);
 		AllValuesList.add(1);
 		AllValuesList.add(1);
 		AllValuesList.add(1);
+		AllValuesList.add(2);
+		AllValuesList.add(2);
+		AllValuesList.add(2);
 		assertEquals(msr.getAllValues(tempFolder.getRoot().toString()), AllValuesList);
 	}
 }
