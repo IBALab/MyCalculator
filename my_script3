@@ -1,8 +1,11 @@
 #!/bin/bash
-#59 */1 * * * bash /home/ec2-user/git/MyCalculator/my_script3 > /home/ec2-user/docs/my_script3.log
+#00 */1 * * * bash /home/ilya/bin/my_script3 > /home/ilya/bin/my_script3.log
 
 now=$(date +"%Y%m%d%H")
-current_f=/home/ec2-user/docs/source_current/*.txt
-arc_folder=/home/ec2-user/docs/source_archive/input_$now.tar.gz
-tar cvzf $arc_folder $current_f
-rm $current_f
+cur_folder=/home/ilya/docs/source_current
+arc_folder=/home/ilya/docs/source_archive
+f_n=input_$now.tar.gz
+cd $cur_folder 
+tar -zcvf $f_n *.txt
+mv $f_n $arc_folder
+rm $cur_folder/*.txt
