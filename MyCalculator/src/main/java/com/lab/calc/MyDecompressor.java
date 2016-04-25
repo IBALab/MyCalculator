@@ -20,16 +20,16 @@ import org.apache.commons.compress.utils.IOUtils;
 
 public class MyDecompressor {
 
-	public List<File> unTar(final File inputFile, final File outputDir)
+	public List<File> unTar(File inputFile, File outputDir)
 			throws FileNotFoundException, IOException, ArchiveException {
 
-		final List<File> untaredFiles = new LinkedList<File>();
-		final InputStream is = new FileInputStream(inputFile);
-		final TarArchiveInputStream debInputStream = (TarArchiveInputStream) new ArchiveStreamFactory()
+		List<File> untaredFiles = new LinkedList<File>();
+		InputStream is = new FileInputStream(inputFile);
+		TarArchiveInputStream debInputStream = (TarArchiveInputStream) new ArchiveStreamFactory()
 				.createArchiveInputStream("tar", is);
 		TarArchiveEntry entry = null;
 		while ((entry = (TarArchiveEntry) debInputStream.getNextEntry()) != null) {
-			final File outputFile = new File(outputDir, entry.getName());
+			File outputFile = new File(outputDir, entry.getName());
 			if (entry.isDirectory()) {
 				if (!outputFile.exists()) {
 					if (!outputFile.mkdirs()) {
@@ -38,7 +38,7 @@ public class MyDecompressor {
 					}
 				}
 			} else {
-				final OutputStream outputFileStream = new FileOutputStream(outputFile);
+				OutputStream outputFileStream = new FileOutputStream(outputFile);
 				IOUtils.copy(debInputStream, outputFileStream);
 				outputFileStream.close();
 			}
@@ -49,12 +49,12 @@ public class MyDecompressor {
 		return untaredFiles;
 	}
 
-	public File unGzip(final File inputFile, final File outputDir) throws FileNotFoundException, IOException {
+	public File unGzip(File inputFile, File outputDir) throws FileNotFoundException, IOException {
 
-		final File outputFile = new File(outputDir, inputFile.getName().substring(0, inputFile.getName().length() - 3));
+		File outputFile = new File(outputDir, inputFile.getName().substring(0, inputFile.getName().length() - 3));
 
-		final GZIPInputStream in = new GZIPInputStream(new FileInputStream(inputFile));
-		final FileOutputStream out = new FileOutputStream(outputFile);
+		GZIPInputStream in = new GZIPInputStream(new FileInputStream(inputFile));
+		FileOutputStream out = new FileOutputStream(outputFile);
 
 		IOUtils.copy(in, out);
 
